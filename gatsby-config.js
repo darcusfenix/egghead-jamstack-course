@@ -17,6 +17,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        accessToken: process.env.LEARNJAMSTACK_SHOPIFY_TOKEN,
+        shopName: `jamstackstore`,
+        includeCollections: [`shop`],
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
