@@ -15,6 +15,7 @@ module.exports = {
     },
     `gatsby-transformer-sqip`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
