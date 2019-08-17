@@ -31,7 +31,10 @@
     "prettier": "1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "course",
+    "egghead",
+    "contentful"
   ],
   "license": "MIT",
   "scripts": {
