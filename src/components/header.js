@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from "prop-types"
+import React from "react"
 import SubscribeForm from "../components/subscribe-form"
 
 const Header = ({ siteTitle }) => (
   <div className="bg-blue-darkest">
-    <div className="container lg:max-w-screen-lg mx-auto px-6 py-8 sm:py-16 md:py-24 text-white">
+    <div className="container lg:max-w-screen-lg mx-auto px-6 text-white">
       <img
         src="/logo.svg"
         className="mb-12 block"
@@ -24,14 +24,14 @@ const Header = ({ siteTitle }) => (
       </div>
     </div>
   </div>
-);
+)
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
-};
+  siteTitle: PropTypes.string,
+}
 
 Header.defaultProps = {
-  siteTitle: ``
-};
+  siteTitle: ``,
+}
 
-export default Header;
+export default Header
