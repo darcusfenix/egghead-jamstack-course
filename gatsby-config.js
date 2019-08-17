@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -16,6 +20,14 @@ module.exports = {
     `gatsby-transformer-sqip`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        accessToken: process.env.LEARNJAMSTACK_SHOPIFY_TOKEN,
+        shopName: `jamstackstore`,
+        includeCollections: [`shop`],
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
