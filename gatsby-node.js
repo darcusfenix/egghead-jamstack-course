@@ -4,6 +4,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const lessonTemplate = path.resolve(`src/templates/lesson.js`)
   const instructorTemplate = path.resolve(`src/templates/instructor.js`)
+  const courseTemplate = path.resolve(`src/templates/course.js`)
   return graphql(`
     {
       allContentfulLesson {
@@ -17,6 +18,14 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             slug
+          }
+        }
+      }
+      allShopifyProduct {
+        edges {
+          node {
+            shopifyId
+            handle
           }
         }
       }
@@ -41,6 +50,15 @@ exports.createPages = ({ graphql, actions }) => {
         component: instructorTemplate,
         context: {
           slug: edge.node.slug,
+        },
+      })
+    })
+    result.data.allShopifyProduct.edges.forEach(edge => {
+      createPage({
+        path: `/courses/${edge.node.handle}`,
+        component: courseTemplate,
+        context: {
+          shopifyId: edge.node.shopifyId,
         },
       })
     })

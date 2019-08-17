@@ -1,6 +1,6 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -21,12 +21,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-source-shopify',
+      resolve: "gatsby-source-shopify",
       options: {
         accessToken: process.env.LEARNJAMSTACK_SHOPIFY_TOKEN,
         shopName: `jamstackstore`,
         includeCollections: [`shop`],
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -43,8 +43,9 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `u2hjug1nowzr`,
-        accessToken: `sJJaBCxUdA4BFqtfR_f5y4m9lvmyOHa3siR8iEETKEc`,
+        spaceId: process.env.LEARNJAMSTACK_CONTENTFUL_SPACE_ID,
+        environment: process.env.LEARNJAMSTACK_CONTENTFUL_ENV,
+        accessToken: process.env.LEARNJAMSTACK_CONTENTFUL_TOKEN,
       },
     },
     `gatsby-plugin-postcss`,

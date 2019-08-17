@@ -12,7 +12,7 @@ const Card = ({
 }) => (
   <div className="w-full md:w-1/2 lg:w-1/3 px-3 flex flex-col mb-8">
     <Link
-      to={`/${handle}`}
+      to={`/courses/${handle}`}
       className="no-underline bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition flex-1 flex flex-col overflow-hidden"
     >
       <div>
