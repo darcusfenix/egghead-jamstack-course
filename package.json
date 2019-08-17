@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "egghead-jamstack-course",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Egghead Jamstack course",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Khaled Garbaya <kgarbaya@gmail.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "@contentful/rich-text-types": "^13.1.0",
