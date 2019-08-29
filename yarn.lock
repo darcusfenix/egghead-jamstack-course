@@ -10587,6 +10587,11 @@ shell-quote@1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
+shopify-buy@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/shopify-buy/-/shopify-buy-2.7.1.tgz#38134dbb06f69c4e3cf57dbbc3a7d23c35406c34"
+  integrity sha512-MZQrKAcHpZhH4YAgYwna4qI5KrveBcafEvpINF36mx6TcPh/hVZCaI8ahHRr/wn3O0NX5Pp9NaWgqiGDz282Rg==
+
 sift@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/sift/-/sift-5.1.0.tgz#1bbf2dfb0eb71e56c4cc7fb567fbd1351b65015e"
@@ -11265,6 +11270,13 @@ tailwindcss-aspect-ratio@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tailwindcss-aspect-ratio/-/tailwindcss-aspect-ratio-2.0.0.tgz#fdc455baf53801cbbeadbda570123bf41290b09f"
   integrity sha512-2yP4tXnGqGfZQRpBZr2Tx8JthEzm/rx4AzB2b2pvmD4rHS0cOoibrN0jDiRhR/Vl5i/DKWvSfn2/nQu5DxAidA==
+  dependencies:
+    lodash "^4.17.11"
+
+tailwindcss-transforms@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-transforms/-/tailwindcss-transforms-2.2.0.tgz#3e0e594a2b34a056714d5fe539e2ace3226edf28"
+  integrity sha512-0HPzE1QgGi94lNOgsIKA0AWaQern+JR0XNJkRmpyjFybpSLtQ5HkupF/caAmUW+pTt4cguDzd5gw09uw1oaG3A==
   dependencies:
     lodash "^4.17.11"
 

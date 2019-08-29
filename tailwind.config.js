@@ -3,6 +3,10 @@ module.exports = {
   important: false,
   separator: ":",
   theme: {
+    translate: {
+      "0": "0",
+      full: "50%",
+    },
     colors: {
       transparent: "transparent",
 
@@ -480,5 +484,9 @@ module.exports = {
     zIndex: ["responsive"],
   },
   corePlugins: {},
-  plugins: [],
-}
+  plugins: [
+    require("tailwindcss-transforms")({
+      "3d": false, // defaults to false
+    }),
+  ],
+};
