@@ -1,12 +1,12 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { graphql } from "gatsby"
-import ShopCard from "../components/shop-card"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { graphql } from "gatsby";
+import ShopCard from "../components/shop-card";
 
 const CoursesPage = ({ data: { allShopifyProduct } }) => (
-  <Layout>
+  <Layout showCart={true}>
     <SEO
       title="Learn JAMStack | Course"
       keywords={[
@@ -33,9 +33,9 @@ const CoursesPage = ({ data: { allShopifyProduct } }) => (
       </div>
     </div>
   </Layout>
-)
+);
 
-export default CoursesPage
+export default CoursesPage;
 export const shopQuery = graphql`
   {
     allShopifyProduct {
@@ -61,4 +61,4 @@ export const shopQuery = graphql`
       }
     }
   }
-`
+`;
