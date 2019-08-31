@@ -1,10 +1,10 @@
-const path = require(`path`)
+const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  const lessonTemplate = path.resolve(`src/templates/lesson.js`)
-  const instructorTemplate = path.resolve(`src/templates/instructor.js`)
-  const courseTemplate = path.resolve(`src/templates/course.js`)
+  const { createPage } = actions;
+  const lessonTemplate = path.resolve(`src/templates/lesson.js`);
+  const instructorTemplate = path.resolve(`src/templates/instructor.js`);
+  const courseTemplate = path.resolve(`src/templates/course.js`);
   return graphql(`
     {
       allContentfulLesson {
@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     if (result.errors) {
-      throw result.errors
+      throw result.errors;
     }
 
     result.data.allContentfulLesson.edges.forEach(edge => {
@@ -42,8 +42,8 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug,
         },
-      })
-    })
+      });
+    });
     result.data.allContentfulInstructor.edges.forEach(edge => {
       createPage({
         path: `/instructors/${edge.node.slug}`,
@@ -51,8 +51,8 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug,
         },
-      })
-    })
+      });
+    });
     result.data.allShopifyProduct.edges.forEach(edge => {
       createPage({
         path: `/courses/${edge.node.handle}`,
@@ -60,7 +60,20 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           shopifyId: edge.node.shopifyId,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
+
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/account/)) {
+    page.matchPath = "/account/*";
+    // Update the page.
+    createPage(page);
+  }
+};

@@ -24,6 +24,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-helmet": "^5.2.1",
+    "react-use-auth": "^0.4.1",
     "shopify-buy": "^2.7.1",
     "tailwindcss": "1.1.1",
     "tailwindcss-aspect-ratio": "2.0.0"
