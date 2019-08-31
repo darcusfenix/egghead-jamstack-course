@@ -25,7 +25,7 @@ const CartIndicator = ({ quantity, toggleCart }) => (
     </span>
   </button>
 );
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, showCart }) => {
   const { checkout } = useContext(StoreContext);
   const [openCart, setOpenCart] = useState(false);
   const toggleCart = () => {
@@ -39,7 +39,9 @@ const Header = ({ siteTitle }) => {
     <div className="bg-blue-darkest">
       <Cart open={openCart} toggleCart={toggleCart} />
       <div className="container lg:max-w-screen-lg mx-auto flex flex-row-reverse p-4">
-        <CartIndicator quantity={itemsInCart} toggleCart={toggleCart} />
+        {showCart && (
+          <CartIndicator quantity={itemsInCart} toggleCart={toggleCart} />
+        )}
       </div>
       <div className="container lg:max-w-screen-lg mx-auto px-6 text-white">
         <img

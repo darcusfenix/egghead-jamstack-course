@@ -43,7 +43,7 @@ const ProductDetail = ({ data }) => {
 };
 const CourseTempalte = ({ data }) => {
   return (
-    <Layout>
+    <Layout showCart={true}>
       <ProductDetail data={data} />
     </Layout>
   );

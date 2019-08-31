@@ -122,7 +122,7 @@ export default class Layout extends React.Component {
     return (
       <StoreContext.Provider value={this.state.store}>
         <div className="flex flex-col font-sans min-h-screen text-grey-darkest">
-          <Header siteTitle=" " />
+          <Header siteTitle=" " showCart={this.props.showCart} />
 
           <div className="flex flex-col flex-1 md:justify-center max-w-5xl mx-auto px-4 py-8 md:p-8 w-full">
             {children}
@@ -158,4 +158,5 @@ export default class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  showCart: PropTypes.bool,
 };

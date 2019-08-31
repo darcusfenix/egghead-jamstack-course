@@ -25,31 +25,32 @@ const Cart = ({ open, toggleCart }) => {
             key={item.id}
             className="flex items-center px-4 bg-gray-200 -mx-4"
           >
-            <img
-              className="w-16 h-16"
-              src={item.variant.image.src}
-              alt={item.title}
-            />
+            <div className="relative">
+              <img
+                className="w-16 h-16"
+                src={item.variant.image.src}
+                alt={item.title}
+              />
+              <span className="absolute top-0 right-0 -mr-4 -mt-2 text-white rounded-full bg-blue-dark px-2">
+                {item.quantity}
+              </span>
+            </div>
             <h4 className="px-2 text-sm">{item.title}</h4>
-            <span className="inline-block text-white rounded-full bg-blue-dark px-2">
-              {item.quantity}
-            </span>
           </li>
         ))}
       </ul>
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          console.log("checkout");
+      <span className="block mb-5">
+        <strong>subtotal:</strong> $ {checkout.subtotalPrice}
+      </span>
+
+      <button
+        className="focus:outline-none focus:bg-blue sm:text-lg w-full sm:w-auto bg-blue-dark hover:bg-blue rounded uppercase text-white font-bold tracking-wide py-3 px-6 sm:py-4"
+        onClick={() => {
+          window.location = checkout.webUrl;
         }}
       >
-        <button
-          className="focus:outline-none focus:bg-blue sm:text-lg w-full sm:w-auto bg-blue-dark hover:bg-blue rounded sm:rounded-l-none uppercase text-white font-bold tracking-wide py-3 px-6 sm:py-4"
-          type="submit"
-        >
-          Checkout
-        </button>
-      </form>
+        Checkout
+      </button>
     </div>
   );
 };
